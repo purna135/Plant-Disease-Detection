@@ -1,4 +1,4 @@
-##🍀 Plant Disease Detection 🍃🍂
+## 🍀Plant Disease Detection 🍃🍂
 Plant Disease is necessary for every farmer so we are created Plant disease detection using Deep learning. In which we are using convolutional Neural Network for classifying Leaf images into 39 Different Categories. The Convolutional Neural Code build in Pytorch Framework. For Training we are using Plant village dataset.
 
 ### About Dataset 🍁
@@ -28,7 +28,7 @@ Plant Disease is necessary for every farmer so we are created Plant disease dete
 Fungal Diseases in Plant, Bacterial Diseases in Plant, Plant Diseases, Deep Learning
 
 
-###▶️Run Project in your Machine
+### ▶️Run Project in your Machine
 * You must have python install in your machine.
 * Create and activate a Python Virtual Environment
 * Install all the dependencies using below command
@@ -36,7 +36,7 @@ Fungal Diseases in Plant, Bacterial Diseases in Plant, Plant Diseases, Deep Lear
 * Run the Flask app `python app.py`
 * You can also use downloaded file in `Model` Section and play with it using Jupyter Notebook.
 
-###🧪Testing Images
+### 🧪Testing Images
 
 * If you do not have leaf images then you can use test images located in test_images folder
 * Each Image have it's disease name so you can verify model is working perfact or not.
