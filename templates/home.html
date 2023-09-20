@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block pagetitle %}
+🌿 Plants Care AI
+{% endblock pagetitle %}
+{% block body %}
+<header class="w-[100%] h-screen bg-cover bg-center relative" style="height: 90vh;">
+    <video autoplay muted loop id="myVideo" class="absolute w-[100%] h-full object-cover">
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-countryside-meadow-4075-large.mp4" type="video/mp4">
+    </video>
+    <div class="absolute w-[100%] h-full bg-black opacity-20"></div>
+    <div class="flex h-full relative">
+        <!-- First Column -->
+        <div class="w-1/2 flex flex-col justify-center items-start p-10">
+            <h1 class="text-6xl font-black text-white">PLANT DISEASE DETECTION</h1>
+            <p class="text-2xl font-black text-white mt-6">Using AI to identify and treat plant diseases</p>
+            <p class="text-white mt-14">
+              Test your plants for any diseases by uploading a picture of a leaf of your plant on this Site.
+              Upload a picture and click Predict button to check for any Diseases.
+            </p>
+        </div>
+        <!-- Second Column -->
+        <div class="w-1/2 flex flex-col justify-center items-center p-10"> <!-- Changed items-start to items-center for center alignment -->
+            <form id="upload-form" method="POST" action="/predict" enctype="multipart/form-data" onsubmit="return validateImage();">
+                <img id="preview" class="mt-4 h-80 w-80 border-2 border-white-500" style="max-width: 100%; filter: opacity(90%);" src="https://simg.nicepng.com/png/small/55-559855_awesome-lowlight-indoor-plant-japanese-peace-lily-in.png"> <!-- Added border, blur and transparency to the image -->
+
+                <div class="custom-file-upload">
+                    <input type="file" name="image" id="image-upload" accept="image/*" style="display: none;">
+                </div>
+                <div class="flex justify-between">
+                  <label for="image-upload" class="mt-4 px-4 py-2 bg-green-500 text-white cursor-pointer backdrop-blur-sm bg-opacity-70">Choose file</label>
+                  <button type="submit" class="mt-4 px-4 py-2 bg-orange-500 text-white backdrop-blur-sm bg-opacity-70">Predict</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</header>
+
+<!-- Image Gallery -->
+<div class="text-center m-16">
+  <h1 class="text-4xl font-bold mb-5">Supported Plants🪴</h1> <!-- Added heading to gallery -->
+  <div class="flex justify-center mt-10 px-10"> <!-- Added padding on left and right -->
+      <div class="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 gap-8"> <!-- Increased gap between image cards -->
+          {% for index in range(0, plants_name | length) %}
+          <div class="bg-gray-200 p-2 rounded-lg">
+              <img class="w-full h-40 object-cover rounded-lg transform hover:scale-110 transition-transform duration-500" src="{{plants_img_url[index]}}" alt="{{plants_name[index]}}">
+
+              <h2 class="text-center mt-2 text-black font-semibold">{{plants_name[index]}}</h2>
+          </div>
+          {% endfor %}
+      </div>
+  </div>
+</div>
+
+<script>
+  function validateImage() {
+      var fileInput = document.getElementById("image-upload");
+      var filePath = fileInput.value;
+      var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+      if(!allowedExtensions.exec(filePath)){
+          alert('Please upload file having extensions .jpeg/.jpg/.png only.');
+          fileInput.value = '';
+          return false;
+      }else{
+          //Image preview
+          if (fileInput.files && fileInput.files[0]) {
+              var reader = new FileReader();
+              reader.onload = function(e) {
+                  document.getElementById('preview').setAttribute('src', e.target.result);
+              };
+              reader.readAsDataURL(fileInput.files[0]);
+          }
+          return true;
+      }
+  }
+</script>
+
+<script>
+    document.getElementById('image-upload').addEventListener('change', function(e) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('preview').src = e.target.result;
+        }
+        reader.readAsDataURL(e.target.files[0]);
+    });
+</script>
+
+{% endblock body %}

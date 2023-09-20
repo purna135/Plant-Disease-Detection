@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block pagetitle %}
+{{title}}
+{% endblock pagetitle %}
+{% block body %}
+
+<div class="text-center text-white mt-20 ">
+  <div class="mx-auto">
+    <h1 class="font-bold text-4xl py-4 text-green-500">{{title}}🌱</h1>
+  </div>
+</div>
+
+<div class="container mx-auto px-20 grid grid-cols-2 gap-10">
+  <!-- col -1, row -1: section 1 -->
+  <!-- col -1, row -1: section 1 -->
+  <div class="p-3 bg-white shadow-lg rounded-lg flex items-center justify-center mx-auto" style="width: 100%; height: 350px;">
+    <img src={{image_url}} class="object-cover h-full w-full">
+  </div>
+  <!-- col -2, row -1: section 2 -->
+  <div class="p-5 bg-white shadow-lg rounded-lg flex items-center justify-center mx-auto" style="width: 100%; height: 350px;">
+    <div class="text-center">
+      <h5 class="font-bold">
+        {% if pred in [3, 5, 7, 11, 15, 18, 20, 23, 24, 25, 28, 38] %}
+        Fertilizer :
+        {% else %}
+        Supplements :
+        {% endif %}
+      </h5>
+      <div class="flex items-center justify-center">
+        <img src={{simage}} class="object-cover h-auto w-auto py-4" style="max-height: 200px;">
+      </div>
+      <h6>{{sname}}</h6>
+      <a href="/" class="inline-block px-4 py-2 mt-4 mr-2 text-white bg-orange-500 rounded hover:bg-green-700 backdrop-blur-sm bg-opacity-70">Predict Again</a>
+      <a target="_blank" href={{buy_link}} class="inline-block px-4 py-2 mt-4 ml-2 text-white bg-green-500 rounded hover:bg-green-700">Buy Product</a>
+    </div>
+  </div>
+  <!-- col -1, row -2: section 3 -->
+  <div class="p-3 bg-white shadow-lg rounded-lg border-2 border-black-500">
+    <h5 class="font-bold">
+      {% if pred in [3, 5, 7, 11, 15, 18, 20, 23, 24, 25, 28, 38] %}
+      Tips to Grow Healthy Plants :
+      {% else %}
+      Brief Description :
+      {% endif %}
+    </h5>
+    <p>{{desc}}</p>
+  </div>
+  <!-- col -2, row -2: section 4 -->
+  <div class="p-5 bg-white shadow-lg rounded-lg border-2 border-black-500">
+    <h5 class="font-bold">
+      {% if pred in [3, 5, 7, 11, 15, 18, 20, 23, 24, 25, 28, 38] %}
+      Benefits :
+      {% else %}
+      Prevent This Plant Disease By follow below steps :
+      {% endif %}
+    </h5>
+    <p>{{prevent}}</p>
+  </div>
+</div>
+
+<div class="h-20"></div>
+ 
+{% endblock body %}

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title> {% block pagetitle %}{% endblock pagetitle %}</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Slider Component Container -->
+    <div class="flex flex-col">
+        <div class="flex flex-col">
+            <!-- Navbar -->
+            <nav class="flex justify-between py-2  bg-gray-600/40
+            backdrop-blur-md  shadow-md w-full 
+            fixed top-0 left-0 right-0 z-10 pl-20 pr-20">
+
+                <!-- Logo Container -->
+                <div class="flex">
+                    <!-- Logo -->
+                    <a class="cursor-pointer" href='/'>
+                        <h3 class="text-2xl font-medium text-blue-500">
+                            <img class="h-[60px] object-cover" src="https://theplantbible.com/wp-content/uploads/2022/12/Logo-Horizontal.png" alt="Logo">
+                        </h3>
+                    </a>
+                </div>
+
+                <!-- Menu Section -->
+                <div class="flex space-x-10 items-center font-bold text-white">
+                    <a href='/' class="flex hover:text-green-500 cursor-pointer">HOME</a>
+                    <a href='/' target="_black" class="flex hover:text-yellow-500 cursor-pointer">CONTACT US</a>
+                    <a href='/' target="_black" class="flex hover:text-yellow-500 cursor-pointer">LOGIN</a>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    {% block body %}
+
+    {% endblock body %}
+    
+    <footer class="w-full bg-gray-600 text-center text-white p-8">Made with 💖 @Team Plants Care AI</footer>
+</body>
+
+</html>
