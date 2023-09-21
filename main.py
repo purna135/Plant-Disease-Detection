@@ -2,10 +2,10 @@ import os
 from flask import Flask, redirect, render_template, request
 import numpy as np
 import pandas as pd
-# from PIL import Image
-# import torchvision.transforms.functional as TF
-# from model import model
-# import torch
+from PIL import Image
+import torchvision.transforms.functional as TF
+from model import model
+import torch
 
 
 plants = pd.read_csv('./data/plants_name_img.csv',encoding='cp1252')
