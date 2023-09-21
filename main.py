@@ -13,7 +13,10 @@ disease_info = pd.read_csv('disease_info.csv' , encoding='cp1252')
 supplement_info = pd.read_csv('supplement_info.csv' , encoding='cp1252')
 
 model = model.Model(39)    
-model.load_state_dict(torch.load("plant_disease_model_1_latest.pt"))
+try:
+    model.load_state_dict(torch.load("plant_disease_model_1_latest.pt"))
+except _pickle.UnpicklingError as e:
+    print("Error loading model state dict:", e)
 model.eval()
 
 def prediction(image_path):
