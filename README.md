@@ -1,34 +1,15 @@
-## 🍀Plant Disease Detection 🍃🍂
-Plant Disease is necessary for every farmer so we are created Plant disease detection using Deep learning. In which we are using convolutional Neural Network for classifying Leaf images into 39 Different Categories. The Convolutional Neural Code build in Pytorch Framework. For Training we are using Plant village dataset.
+# ☘️ PLANT DISEASE CLASSIFICATION USING RESNET-9 ☘️ 🍃🍂
+Plant Disease is necessary for every farmer so we are created Plant disease detection using Deep learning. In which we are using convolutional Neural Network for classifying Leaf images into 38 Different Categories. The Convolutional Neural Code build in Pytorch Framework. For Training we are using Plant village dataset.
 
-### About Dataset 🍁
-- Dataset link -> https://data.mendeley.com/datasets/tywbtsjrjv/1
-  #### Description
-  In this data-set, 39 different classes of plant leaf and background images are available.  The data-set containing 61,486 images. We used six different augmentation techniques for increasing the data-set size. The techniques are image flipping, Gamma correction, noise injection, PCA color augmentation, rotation, and Scaling.
-    
-#### Dataset contains 39 classes:
-|                         |                         |                         |
-|-------------------------|-------------------------|-------------------------|
-| Apple_scab              | Grape_black_measles     | Squash_powdery_mildew   |
-| Apple_black_rot         | Grape_leaf_blight       | Strawberry_healthy      |
-| Apple_cedar_apple_rust  | Grape_healthy           | Strawberry_leaf_scorch  |
-| Apple_healthy           | Orange_haunglongbing    | Tomato_bacterial_spot   |
-| Background_without_leaves | Peach_bacterial_spot  | Tomato_early_blight     |
-| Blueberry_healthy       | Pepper_bacterial_spot   | Tomato_healthy          |
-| Cherry_powdery_mildew   | Pepper_healthy          | Tomato_late_blight      |
-| Cherry_healthy          | Potato_early_blight    | Tomato_leaf_mold        |
-| Corn_gray_leaf_spot     | Potato_healthy          | Tomato_septoria_leaf_spot |
-| Corn_common_rust        | Potato_late_blight     | Tomato_spider_mites_two-spotted_spider_mite |
-| Corn_northern_leaf_blight | Raspberry_healthy    | Tomato_target_spot      |
-| Corn_healthy            | Soybean_healthy         | Tomato_mosaic_virus     |
-| Grape_black_rot         |                        | Tomato_yellow_leaf_curl_virus |
+## 📝About dataset 🍁
+- Dataset link -> https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset
+  ### Description
+  This dataset is created using offline augmentation from the original dataset. The original PlantVillage Dataset can be found [here](https://github.com/spMohanty/PlantVillage-Dataset).This dataset consists of about 87K rgb images of healthy and diseased crop leaves which is categorized into 38 different classes. The total dataset is divided into 80/20 ratio of training and validation set preserving the directory structure. A new directory containing 33 test images is created later for prediction purpose.
 
-    
-#### Categories
-Fungal Diseases in Plant, Bacterial Diseases in Plant, Plant Diseases, Deep Learning
+## 🎯Goal of the Project
+Goal is clear and simple. We need to build a model, which can classify between healthy and diseased crop leaves and also if the crop have any disease, predict which disease is it.
 
-
-### ▶️Run Project in your Machine
+## ▶️Run Project in your Machine
 * You must have python install in your machine.
 * Create and activate a Python Virtual Environment
 * Install all the dependencies using below command
@@ -36,9 +17,12 @@ Fungal Diseases in Plant, Bacterial Diseases in Plant, Plant Diseases, Deep Lear
 * Run the Flask app `python app.py`
 * You can also use downloaded file in `Model` Section and play with it using Jupyter Notebook.
 
-### 🧪Testing Images
+## 🧪Testing Images
 
 * If you do not have leaf images then you can use test images located in test_images folder
 * Each Image have it's disease name so you can verify model is working perfact or not.
 
 
+## 📒Kaggle Notebook
+Learn more details from this kaggle notebook
+<iframe src="https://www.kaggle.com/embed/purna135/plant-disease-detection-resnet?kernelSessionId=144440071" height="800" style="margin: 0 auto; width: 100%; max-width: 950px;" frameborder="0" scrolling="auto" title="Plant Disease Detection - ResNet"></iframe>
