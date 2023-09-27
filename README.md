@@ -15,7 +15,7 @@ Goal is clear and simple. We need to build a model, which can classify between h
 * Install all the dependencies using below command
     `pip install -r requirements.txt`
 * Run the Flask app `python app.py`
-* You can also use downloaded file in `Model` Section and play with it using Jupyter Notebook.
+* You can also use downloaded notebook in `models` folder and play with it using Jupyter Notebook.
 
 ## 🧪Testing Images
 
@@ -24,5 +24,4 @@ Goal is clear and simple. We need to build a model, which can classify between h
 
 
 ## 📒Kaggle Notebook
-Learn more details from this kaggle notebook
-<iframe src="https://www.kaggle.com/embed/purna135/plant-disease-detection-resnet?kernelSessionId=144440071" height="800" style="margin: 0 auto; width: 100%; max-width: 950px;" frameborder="0" scrolling="auto" title="Plant Disease Detection - ResNet"></iframe>
+Learn more details from this kaggle notebook: [Plant Disease Detection - ResNet](https://www.kaggle.com/code/purna135/plant-disease-detection-resnet?kernelSessionId=144440071)
